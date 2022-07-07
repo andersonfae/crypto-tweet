@@ -10,14 +10,11 @@ const Modal = () => {
     owner: "",
     description: "",
   });
-  console.log(tweet);
 
   function handleChange(e) {
     e.preventDefault();
 
     setTweet({ ...tweet, [e.target.name]: e.target.value });
-
-    console.log(tweet);
   }
 
   async function handleSubmit(e) {

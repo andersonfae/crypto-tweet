@@ -8,14 +8,12 @@ const EditModal = (props) => {
     owner: "",
     description: "",
   });
-  console.log(tweet);
   useEffect(() => {
     async function fetchEditTweet() {
       try {
         const response = await axios.get(
           `https://ironrest.herokuapp.com/cryptotweet/${props.id}`
         );
-        console.log(response);
         setTweet({ ...response.data });
       } catch (err) {
         console.log(err);

@@ -43,7 +43,10 @@ export function Homepage() {
           <div className="grid pl-14 grid-cols-4 gap-10 pr-14">
             {tweet.map((currentTweet) => {
               return (
-                <div className="flex flex-wrap basis-1/5">
+                <div
+                  key={currentTweet._id}
+                  className="flex flex-wrap basis-1/5"
+                >
                   <Cards
                     owner={currentTweet.owner}
                     description={currentTweet.description}
