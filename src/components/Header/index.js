@@ -37,7 +37,14 @@ export function Header() {
             </div>
           </div>
           <div className="flex pr-52">
-            <img src={Holder} alt="holder" className="h-48 animate-spin" />
+            <img
+              src={Holder}
+              alt="holder"
+              className="h-48 animate-spin"
+              style={{
+                animation: "spin 5s linear infinite",
+              }}
+            />
           </div>
         </div>
       </div>
