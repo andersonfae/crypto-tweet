@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import Rocket from "../../images/rocket-launch-outlinerocket.svg";
 
 const Modal = () => {
@@ -34,7 +33,7 @@ const Modal = () => {
   return (
     <>
       <button
-        className="flex bg-purple-600 text-white font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 relative bottom-0 right-0 float-right"
+        className="flex bg-purple-600 text-white font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 relative bottom-0 right-0 float-right"
         type="button"
         onClick={() => setShowModal(true)}
       >
@@ -86,12 +85,13 @@ const Modal = () => {
                     <textarea
                       id="description-input"
                       onChange={handleChange}
-                      className="block text-sm shadow appearance-none border rounded w-96 py-36 px-1 text-black"
+                      className="block text-sm shadow appearance-none border rounded px-1 text-black align-top "
                       type="string"
                       value={tweet.description}
                       name="description"
                       rows="4"
                       cols="50"
+                      maxlength="140"
                     />
                     <p className="text-black opacity-50 text-sm">
                       limit 140 chars.
