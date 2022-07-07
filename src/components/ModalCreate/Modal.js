@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Rocket from "../../images/rocket-launch-outlinerocket.svg";
+import Close from "../../images/close.svg";
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -44,23 +45,21 @@ const Modal = () => {
       </button>
       {showModal ? (
         <>
-          <div className="flex items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+          <div className="flex items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-purple-500 bg-opacity-95">
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
-              <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-auto bg-white outline-none focus:outline-none">
+              <div className="border-0 rounded-lg relative flex flex-col w-auto bg-white outline-none focus:outline-none">
                 <div className="flex justify-between">
                   <button
                     className="bg-transparent border-0 text-black float-right"
                     onClick={() => setShowModal(false)}
                   >
-                    <span className="text-black opacity-7 h-6 w-6 text-xl block">
-                      x
-                    </span>
+                    <img src={Close} alt="Close" className="w-7 mt-3 ml-3" />
                   </button>
                 </div>
                 <div className="relative p-6 flex-auto">
                   <form
                     onSubmit={handleSubmit}
-                    className="text-start bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 w-full"
+                    className="text-start rounded px-8 pt-6 pb-8 w-full"
                   >
                     <label
                       htmlFor="owner-input"
@@ -71,27 +70,27 @@ const Modal = () => {
                     <input
                       id="owner-input"
                       onChange={handleChange}
-                      className="shadow appearance-none border rounded w-full py-2 px-1 text-black"
+                      className="appearance-none border rounded w-full py-2 px-1 text-black"
                       type="string"
                       name="owner"
                       value={tweet.owner}
                     />
                     <label
                       htmlFor="description-input"
-                      className="block text-black text-sm font-bold mb-1"
+                      className="block text-black text-sm font-bold mb-1 pt-4"
                     >
                       Describe your profit and loses.
                     </label>
                     <textarea
                       id="description-input"
                       onChange={handleChange}
-                      className="block text-sm shadow appearance-none border rounded px-1 text-black align-top "
+                      className="block text-sm appearance-none border rounded px-1 text-black align-top "
                       type="string"
                       value={tweet.description}
                       name="description"
                       rows="4"
                       cols="50"
-                      maxlength="140"
+                      maxLength="140"
                     />
                     <p className="text-black opacity-50 text-sm">
                       limit 140 chars.
@@ -100,7 +99,7 @@ const Modal = () => {
                 </div>
                 <div className="flex items-center justify-between p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <button
-                    className="inline-block px-6 py-2.5 bg-gray-200 text-purple-700 font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-gray-300 hover:shadow-lg focus:bg-gray-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-400 active:shadow-lg transition duration-150 ease-in-out"
+                    className="inline-block px-6 py-2.5 bg-gray-200 text-purple-700 font-medium text-xs leading-tight uppercase rounded-full hover:bg-gray-300 focus:bg-gray-300 focus:outline-none focus:ring-0 active:bg-gray-400 transition duration-150 ease-in-out"
                     type="button"
                     onClick={() => setShowModal(false)}
                   >

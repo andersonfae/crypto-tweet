@@ -1,11 +1,8 @@
-import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import EditModal from "../ModalEdit/EditModal";
 
 export function Cards(props) {
   const state = { date: new Date() };
-  const { id } = useParams();
-  const navigate = useNavigate();
 
   async function handleDelete() {
     try {
@@ -35,9 +32,6 @@ export function Cards(props) {
           <h6 class="font-bold text-md">{props.owner}</h6>
           <p class="text-xs text-gray-600">{state.date.toLocaleDateString()}</p>
         </div>
-        {/* <div class="w-12 text-right">
-            <button class="px-2 text-center cursor-pointer select-none h-4 pb-2 inline-flex items-center transition-colors bg-gray-100 active:text-white active:bg-blue-600 font-medium text-gray-900  hover:bg-blue-100 disabled:opacity-50"></button>
-          </div> */}
       </div>
       <div class="mb-4">
         <p class="text-sm">{props.description}</p>

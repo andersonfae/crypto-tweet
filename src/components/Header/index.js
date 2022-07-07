@@ -9,9 +9,8 @@ export function Header() {
             <div className="ml-16 pt-14 flex pb-14 pr-16 w-6/12 border-r border-solid border-gray-300">
               <h1 className="text-4xl font-serif">CryptoTweet</h1>
               <h3 className="ml-24 text-3xl font-sans">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
+                Discover real stories about cryptos gains and losses and have a
+                thermometer as is the mood of the market right now.
               </h3>
             </div>
           </div>
