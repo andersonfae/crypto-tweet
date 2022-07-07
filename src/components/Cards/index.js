@@ -1,5 +1,6 @@
 import axios from "axios";
 import EditModal from "../ModalEdit/EditModal";
+import Avatar from "boring-avatars";
 
 export function Cards(props) {
   const state = { date: new Date() };
@@ -23,10 +24,13 @@ export function Cards(props) {
     >
       <div className="flex mb-4">
         <div className="overflow-hidden rounded-full w-12 h-12">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Anonymous.jpg"
-            alt=""
+          <Avatar
+            size={60}
+            name={props.owner}
+            variant="beam"
+            colors={["#000", "#B356FF"]}
           />
+          ;
         </div>
         <div className="flex-grow pl-3">
           <h6 className="font-bold text-md">{props.owner}</h6>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Rocket from "../../images/rocket-launch-outlinerocket.svg";
 import Close from "../../images/close.svg";
+import { Toaster, toast } from "react-hot-toast";
 
 const Modal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +21,7 @@ const Modal = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     setShowModal(false);
+    toast.success("CryptoTweet was added");
     try {
       await axios.post("https://ironrest.herokuapp.com/cryptotweet", tweet);
       window.location.reload();
@@ -30,6 +32,7 @@ const Modal = () => {
 
   return (
     <>
+      <Toaster />
       <button
         className="flex bg-purple-600 text-white font-bold uppercase text-sm px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 relative bottom-0 right-0 float-right"
         type="button"
